@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 25% 97%;
+    --foreground: 220 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+    --primary: 4 90% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 28 100% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 30 15% 93%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 45 100% 52%;
+    --accent-foreground: 220 20% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 10% 88%;
+    --input: 30 10% 88%;
+    --ring: 4 90% 58%;
+    --radius: 0.875rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 4 90% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 15% 93%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 30 10% 88%;
+    --sidebar-ring: 4 90% 58%;
+
+    --success: 152 65% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 10%;
+    --canteen-green: 152 60% 42%;
+    --canteen-green-foreground: 0 0% 100%;
+    --primary-glow: 28 100% 55%;
+  }
+
+  :root[data-theme='ocean'] {
+    --primary: 198 84% 42%;
+    --secondary: 186 83% 41%;
+    --accent: 168 68% 42%;
+    --ring: 198 84% 42%;
+    --canteen-green: 164 74% 36%;
+    --primary-glow: 186 83% 41%;
+  }
+
+  :root[data-theme='forest'] {
+    --primary: 150 54% 34%;
+    --secondary: 39 86% 49%;
+    --accent: 26 84% 50%;
+    --ring: 150 54% 34%;
+    --canteen-green: 136 52% 35%;
+    --primary-glow: 39 86% 49%;
+  }
+
+  :root[data-theme='cocoa'] {
+    --primary: 14 74% 45%;
+    --secondary: 30 89% 48%;
+    --accent: 45 85% 52%;
+    --ring: 14 74% 45%;
+    --canteen-green: 145 47% 39%;
+    --primary-glow: 30 89% 48%;
+  }
+
+  .dark {
+    --background: 220 15% 6%;
+    --foreground: 30 15% 92%;
+    --card: 220 12% 10%;
+    --card-foreground: 30 15% 92%;
+    --popover: 220 12% 10%;
+    --popover-foreground: 30 15% 92%;
+    --primary: 4 90% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 28 100% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 10% 16%;
+    --muted-foreground: 30 10% 58%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 220 20% 10%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 18%;
+    --input: 220 10% 18%;
+    --ring: 4 90% 62%;
+    --sidebar-background: 220 12% 8%;
+    --sidebar-foreground: 30 10% 80%;
+    --sidebar-primary: 4 90% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 10% 16%;
+    --sidebar-accent-foreground: 30 10% 80%;
+    --sidebar-border: 220 10% 18%;
+    --sidebar-ring: 4 90% 62%;
+
+    --success: 152 65% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 10%;
+    --canteen-green: 152 60% 50%;
+    --canteen-green-foreground: 0 0% 100%;
+    --primary-glow: 28 100% 58%;
+  }
+
+  .dark[data-theme='ocean'] {
+    --primary: 198 90% 58%;
+    --secondary: 186 83% 50%;
+    --accent: 168 70% 52%;
+    --ring: 198 90% 58%;
+    --canteen-green: 164 70% 48%;
+    --primary-glow: 186 83% 50%;
+  }
+
+  .dark[data-theme='forest'] {
+    --primary: 150 58% 46%;
+    --secondary: 39 90% 56%;
+    --accent: 28 88% 58%;
+    --ring: 150 58% 46%;
+    --canteen-green: 140 58% 48%;
+    --primary-glow: 39 90% 56%;
+  }
+
+  .dark[data-theme='cocoa'] {
+    --primary: 14 78% 56%;
+    --secondary: 30 89% 56%;
+    --accent: 46 88% 60%;
+    --ring: 14 78% 56%;
+    --canteen-green: 146 55% 48%;
+    --primary-glow: 30 89% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito', sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: 'Fredoka One', cursive;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(4, 90%, 58%), hsl(28, 100%, 55%));
+  }
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(4, 90%, 58%), hsl(28, 100%, 55%), hsl(45, 100%, 52%));
+  }
+  .gradient-card {
+    background: linear-gradient(160deg, hsl(var(--card)), hsl(var(--muted) / 0.5));
+  }
+  .gradient-cool {
+    background: linear-gradient(135deg, hsl(220, 90%, 56%), hsl(280, 80%, 60%));
+  }
+  .gradient-mesh {
+    background: 
+      radial-gradient(at 20% 30%, hsl(4 90% 58% / 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 70%, hsl(28 100% 55% / 0.12) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, hsl(45 100% 52% / 0.08) 0px, transparent 50%);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(4, 90%, 58%), hsl(28, 100%, 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(45, 100%, 52%), hsl(38, 92%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass {
+    backdrop-filter: blur(20px) saturate(200%);
+    background: hsl(var(--card) / 0.75);
+    border: 1px solid hsl(var(--border) / 0.4);
+  }
+  .glass-strong {
+    backdrop-filter: blur(30px) saturate(220%);
+    background: hsl(var(--card) / 0.6);
+    border: 1px solid hsl(var(--border) / 0.3);
+    box-shadow: 0 8px 32px hsl(var(--foreground) / 0.06);
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background-size: 200% 100%;
+  }
+  .animate-gradient-shift {
+    animation: gradient-shift 4s ease infinite;
+    background-size: 200% 200%;
+  }
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .animate-scale-bounce {
+    animation: scale-bounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(4 90% 58% / 0.3), 0 0 60px hsl(4 90% 58% / 0.1);
+  }
+  .glow-success {
+    box-shadow: 0 0 20px hsl(152 60% 42% / 0.3), 0 0 60px hsl(152 60% 42% / 0.1);
+  }
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(45 100% 52% / 0.3), 0 0 60px hsl(45 100% 52% / 0.1);
+  }
+  .card-elevated {
+    box-shadow: 0 4px 6px -1px hsl(var(--foreground) / 0.04),
+                0 10px 15px -3px hsl(var(--foreground) / 0.06),
+                0 20px 25px -5px hsl(var(--foreground) / 0.04);
+  }
+  .card-hover-lift {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  }
+  .card-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px -8px hsl(var(--foreground) / 0.12),
+                0 4px 8px -2px hsl(var(--foreground) / 0.06);
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes bounce-toast {
+  0% { transform: translateY(-100%) scale(0.8); opacity: 0; }
+  50% { transform: translateY(10%) scale(1.05); }
+  70% { transform: translateY(-5%) scale(0.98); }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px hsl(4 90% 58% / 0.2); }
+  50% { box-shadow: 0 0 40px hsl(4 90% 58% / 0.4), 0 0 80px hsl(28 100% 55% / 0.15); }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scale-bounce {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin-slow {
+  100% { transform: rotate(360deg); }
+}
+
+.animate-bounce-toast {
+  animation: bounce-toast 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
